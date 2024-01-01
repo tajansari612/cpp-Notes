@@ -12,6 +12,8 @@ using namespace std;
 //01 Stores similar i.e homogeneous type of elements
 //02 Stored in contiguous memory locations i.e linear location
 //03 0 based indexing is used
+//04 The name of the array (ex. arr) represents the location of the first element
+
 
 //04 syntax 
 // int arr[size];
