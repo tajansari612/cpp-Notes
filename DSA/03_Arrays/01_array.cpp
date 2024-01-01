@@ -13,7 +13,7 @@ using namespace std;
 //02 Stored in contiguous memory locations i.e linear location
 //03 0 based indexing is used
 //04 The name of the array (ex. arr) represents the location of the first element
-
+//05 int arr[100] = {1,2,3}  //it stores the 1,2,3 initially and then stores 0 in all the other locations
 
 //04 syntax 
 // int arr[size];
