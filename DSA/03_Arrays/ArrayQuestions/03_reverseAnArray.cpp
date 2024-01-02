@@ -5,8 +5,8 @@ void reverseArray(int arr[],int n){
     int mid = n/2;
     for(int i=0;i<mid;i++){
         int temp = arr[i];
-        arr[i] = arr[n-i+1];
-        arr[n-i+1] = temp;
+        arr[i] = arr[n-i-1];
+        arr[n-i-1] = temp;
     }
     
 }
@@ -25,7 +25,7 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
-    
+    disp(arr,n);
     reverseArray(arr,n);
     cout<<"The reverse of the array is :";
     disp(arr,n);
