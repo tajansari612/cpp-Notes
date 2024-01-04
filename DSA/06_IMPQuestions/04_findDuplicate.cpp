@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 
+//Approach 01
 int findDuplicate(int *arr, int size)
 {
     //Write your code here
@@ -11,6 +12,21 @@ int findDuplicate(int *arr, int size)
             return abs(arr[i]);
         }
     }
+}
+
+//Approach 02
+int findDuplicate2(int *arr, int n)
+{
+    //Write your code here
+    int ans = 1;
+    for(int i=2;i<=n;i++){
+        ans^=i;
+    }
+
+    for(int i=0;i<n;i++){
+        ans^=arr[i];
+    }
+	 return ans^n;
 }
 void disp(int arr[],int n){
     for(int i=0;i<n;i++){
@@ -29,7 +45,8 @@ int main(){
     }
     disp(arr,n);
 
-    int duplicateEle = findDuplicate(arr,n);
+    // int duplicateEle = findDuplicate(arr,n);
+    int duplicateEle = findDuplicate2(arr,n);
     cout<<"Duplicate element is :"<<duplicateEle<<endl;
     return 0;
 }
