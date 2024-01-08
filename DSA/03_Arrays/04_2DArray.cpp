@@ -13,10 +13,10 @@ int main(){
         cout<<endl;
     }
     cout<<endl;
-    vector<vector<int>> vec1;
-    vec1.push_back({1,2,3});
-    vec1.push_back({4,5,6});
-    vec1.push_back({7,8,9});
+    
+    //2D Vector
+    vector<vector<int>> vec1(3,vector<int>(3));    // 3*3 vector
+    vec1 = {{1,2,3},{4,5,6},{7,8,9}};
     for(int i=0;i<3;i++){
         for(int j=0;j<3;j++){
             cout<<vec1[i][j]<<" ";
