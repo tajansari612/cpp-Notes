@@ -2,6 +2,8 @@
 using namespace std;
 
 //Approach 01
+//Time Complexity O(N)
+//Space Complexity O(1)
 int findDuplicate(int *arr, int size)
 {
     //Write your code here
@@ -15,18 +17,21 @@ int findDuplicate(int *arr, int size)
 }
 
 //Approach 02
+//Time Complexity O(N)
+//Space Complexity O(1)
 int findDuplicate2(int *arr, int n)
 {
     //Write your code here
     int ans = 1;
-    for(int i=2;i<=n;i++){
+    for(int i=2;i<n;i++){
         ans^=i;
     }
-
+    cout<<ans<<" ";
     for(int i=0;i<n;i++){
         ans^=arr[i];
     }
-	 return ans^n;
+    cout<<ans<<" ";
+	 return ans;
 }
 void disp(int arr[],int n){
     for(int i=0;i<n;i++){
