@@ -26,11 +26,9 @@ int findDuplicate2(int *arr, int n)
     for(int i=2;i<n;i++){
         ans^=i;
     }
-    cout<<ans<<" ";
     for(int i=0;i<n;i++){
         ans^=arr[i];
     }
-    cout<<ans<<" ";
 	 return ans;
 }
 void disp(int arr[],int n){
