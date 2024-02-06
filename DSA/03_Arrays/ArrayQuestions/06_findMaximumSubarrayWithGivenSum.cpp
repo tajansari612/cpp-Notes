@@ -7,36 +7,29 @@ using namespace std;
 //Problem link
 //https://takeuforward.org/arrays/longest-subarray-with-sum-k-postives-and-negatives/
 int maximumSubarrayWithGivenSum(int arr[],int n,long long k){
-    int PreSum[n];
-    PreSum[0]=arr[0];
-    for(int i=1;i<n;i++){
-        PreSum[i] = PreSum[i-1] + arr[i];
-    }
-    // for(int i=0;i<n;i++){
-    //     cout<<PreSum[i]<<" ";
-    // }cout<<endl;\
-
     unordered_map<int,int> mp;
     unordered_map<int,int>::iterator iter;
+    int sum = 0;
     int ans=0;
     for(int i=0;i<n;i++){
-        if(PreSum[i]==k){
+        sum+=arr[i];
+        if(sum==k){
             ans=max(ans,i+1);
+            
         }
 
-        int check = PreSum[i]-k;
-        if(!(mp.find(PreSum[i])!=mp.end())){
-            mp[PreSum[i]]=i;
-        }
+        int check = sum - k;
+        
         if(mp.find(check)!=mp.end()){
             ans=max(ans,i-mp[check]);
         }
+        if(!(mp.find(sum)!=mp.end())){
+            mp[sum]=i;
+        }
+        
         
     }
 
-    // for(iter=mp.begin();iter!=mp.end();iter++){
-    //     cout<<iter->first<<" "<<iter->second<<"----";
-    // }
     return ans;
 }
 
