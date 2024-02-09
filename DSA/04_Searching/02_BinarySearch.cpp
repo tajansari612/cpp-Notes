@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 
+//Time Complexity O(logn)
+//Space Complexity O(1)
 int binarySearch(int arr[],int n,int x){
     int i=0;
     int j=n-1;
