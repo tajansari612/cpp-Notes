@@ -4,14 +4,15 @@ using namespace std;
 int pivotSearch(int arr[],int n){
     int i=0;
     int j=n-1;
+    int mid;
     while(i<=j){
-        int mid = i + (j-i)/2;
+        mid = i + (j-i)/2;
         if(arr[mid]<arr[mid-1] && arr[mid]<arr[mid+1]){
             return mid;
-        }else if(arr[mid]<arr[i]){
-            j=mid-1;
-        }else{
+        }else if(arr[mid]>=arr[i] && arr[mid]>=arr[j]){
             i=mid+1;
+        }else{
+            j=mid-1;
         }
     }
     return -1;
