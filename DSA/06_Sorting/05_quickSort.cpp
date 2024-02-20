@@ -3,7 +3,8 @@
 using namespace std;
 
 //Space complexity O(LogN)
-//Time complexity O(NLogN)
+//Average Time complexity is O(NLogN)
+//Worst Time complexity is O(N^2)
 int partition(vector<int>& arr,int low,int high){
     int i=low;
     int j=low;
