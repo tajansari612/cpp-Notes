@@ -2,8 +2,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//Space complexity O(1)
-//Time complexity O(N^2)
+//Space complexity O(N)
+//Time complexity O(NLogN)
 void merge(vector<int>& arr,int l,int mid,int r){
     int n1=mid-l+1;
     int n2=r-mid;
@@ -33,6 +33,8 @@ void merge(vector<int>& arr,int l,int mid,int r){
     while(j<n2){
         arr[k++]=arr2[j++];
     }
+    delete[] arr1;
+    delete[] arr2;
 }
 void mergeSort(vector<int>& arr,int l,int r){
     if(l>=r){
