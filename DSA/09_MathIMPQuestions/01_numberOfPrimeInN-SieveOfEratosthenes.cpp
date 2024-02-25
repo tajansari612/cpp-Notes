@@ -2,6 +2,7 @@
 #include<vector>
 using namespace std;
 
+//Time Complexity O(N*Log(Log(N)));
 int countPrime(int n){
     int ctr=0;
     vector<bool> prime(n+1,true);
