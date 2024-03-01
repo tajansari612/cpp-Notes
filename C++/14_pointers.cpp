@@ -79,9 +79,41 @@ int main(){
     ptr6=&y;
     cout<<ptr6<<endl;
 
+    //05 Double Pointer
+    {
+        int a=10;
+        int *p=&a;
+        int **q=&p;
+        cout<<a<<" "<<*p<<" "<<**q<<endl;
+    }
+
     //cout<<*ptr6<<endl;  //error cannot be dereferenced directly typecasting is needed
     cout<<*((float*)ptr6)<<" ";
     ptr6=&x;
-    cout<<*((int*)ptr6)<<" ";
+    cout<<*((int*)ptr6)<<endl;
+
+
+    //IMP Note
+    //01
+    // int *ptr7=0;
+    // a=10;
+    // *ptr7=a;
+    // cout<<*ptr7<<endl;  //if it is uncommented, code below this not executed
+    cout<<"true"<<endl;
+
+    //02
+    {
+        char b[] = "xyz";
+        char *c = &b[0];
+        cout << c << endl;
+    }
+
+    //03
+    {
+        int arr[]={1,2,3,4,5};
+        int *ptr1=&arr[0];
+        int *ptr2=ptr1+3;
+        cout<<ptr2-ptr1<<endl;
+    }
     return 0;
 }
