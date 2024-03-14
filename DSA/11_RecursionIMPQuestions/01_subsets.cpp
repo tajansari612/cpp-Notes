@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void solve(vector<int>& nums,vector<int> output,vector<vector<int>>& ans,int ind){
+void solve(vector<int>& nums,vector<int> &output,vector<vector<int>>& ans,int ind){
         if(ind>=nums.size()){
             ans.push_back(output);
             return ;
@@ -14,6 +14,7 @@ void solve(vector<int>& nums,vector<int> output,vector<vector<int>>& ans,int ind
         //include
         output.push_back(nums[ind]);
         solve(nums,output,ans,ind+1);
+        output.pop_back();
 
     }
 vector<vector<int>> subsets(vector<int>& nums) {
