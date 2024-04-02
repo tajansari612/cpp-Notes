@@ -24,39 +24,38 @@ void insertAtTail(node* &head,int data){
     }
     curr->next=tmp;
 }
-void reverseSLLByK(node* &head,int k){
+node* solve(node* head,int k,int n){
+    if(head==NULL) return NULL;
+    if(n<k){
+        return head;
+    }
+    node* prev=NULL;
+    node* curr=head;
+    node* next=NULL;
+    int ctr=0;
+    while(curr!=NULL && ctr<k){
+        next=curr->next;
+        curr->next=prev;
+        prev=curr;
+        curr=next;
+        ctr++;
+    }
+    n-=k;
+    if(next!=NULL){
+        head->next=solve(next,k,n);
+    }
+    return prev;
+}
+
+node* reverseSLLByKGroups(node* head, int k) {
     int n=0;
     node* curr=head;
     while(curr!=NULL){
-        curr=curr->next;
         n++;
+        curr=curr->next;
     }
-
-    node* imp=head;
-    curr=head;
-    node* prev=NULL;
-    node* nxt=head;
-    for(int i=0;i<k;i++){
-        nxt=nxt->next;
-        curr->next=prev;
-        prev=curr;
-        curr=nxt;
-    }
-    n-=k;
-    head=prev;
-    while(n>=k){
-        node* p=curr;
-        for(int i=0;i<k;i++){
-            nxt=nxt->next;
-            curr->next=prev;
-            prev=curr;
-            curr=nxt;
-        }
-        imp->next=prev;
-        imp=p;
-        n-=k;
-    }
-    imp->next=curr;
+    head=solve(head,k,n);
+    return head;
 }
 void disp(node* head){
     node* curr=head;
@@ -81,7 +80,7 @@ int main(){
     cout<<"Enter the k :";
     cin>>k;
     // disp(head);
-    reverseSLLByK(head,k);
+    head=reverseSLLByKGroups(head,k);
     disp(head);
     return 0;
 }
