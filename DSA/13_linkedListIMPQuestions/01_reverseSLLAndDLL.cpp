@@ -11,6 +11,18 @@ class node{
         this->next=NULL;
     }
 };
+class DLLnode{
+    public:
+    int data;
+    DLLnode* next;
+    DLLnode* prev;
+
+    DLLnode(int data){
+        this->data=data;
+        this->next=NULL;
+        this->prev=NULL;
+    }
+};
 void insertAtTail(node* &head,int data){
     if(head==NULL){
         node* tmp=new node(data);
@@ -24,8 +36,9 @@ void insertAtTail(node* &head,int data){
     }
     curr->next=tmp;
 }
+
 void reverseSLL(node* &head){
-    node* prev=head;
+    node* prev=NULL;
     node* curr=head;
     node* nxt=head;
     while(curr!=NULL){
@@ -34,9 +47,24 @@ void reverseSLL(node* &head){
         prev=curr;
         curr=nxt;
     }
-    head->next=NULL;
     head=prev;
 }
+void reverseDLL(DLLnode* &head)
+{   
+    // Write your code here   
+    if(head==NULL) return;
+    DLLnode* nxt=head;
+    DLLnode* curr=head;
+    DLLnode* prev=NULL;
+    while(curr!=NULL){
+        nxt=nxt->next;
+        curr->next=prev;
+        curr->prev=nxt;
+        prev=curr;
+        curr=nxt;
+    }
+}
+
 void disp(node* head){
     node* curr=head;
     while(curr!=NULL){
