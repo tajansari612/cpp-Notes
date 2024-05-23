@@ -17,16 +17,16 @@ using namespace std;
 // push
 // pop
 
-// Push:
+// push:
 // Adds an item to the stack. If the stack is full, then it is said to be an
 // Overflow condition.
 
-// Pop:
+// pop:
 // Removes an item from the stack. The items are popped in the reversed order
 // in which they are pushed. If the stack is empty, then it is said to be an
 // Underflow condition.
 
-// Top:
+// top:
 // Returns the top element of the stack.
 
 // isEmpty:
