@@ -41,6 +41,13 @@ using namespace std;
 // The function is used to access the rear element of the queue. The element plays
 // a very important role as all the insertion operations are performed at the rear
 // element.
+
+
+// Implementation of Queue:
+// The basic operations that can be performed on a queue include push, pop,front,
+// and back. There are two ways to implement a stack –
+//01 Using array
+//02 Using linked list
 int main(){
     
     return 0;
