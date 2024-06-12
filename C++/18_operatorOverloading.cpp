@@ -11,20 +11,25 @@ using namespace std;
 // example
 
 class complex{
-public:
     int real;
     int img;
-
+public:
+    complex(){
+        this->real=0;
+        this->img=0;
+    }
     complex(int real, int img)
     {
         this->real = real;
         this->img = img;
     }
-
+    void disp(){
+        cout<<this->real<<" i"<<this->img<<endl;
+    }
     //operator overloading
     complex operator + (complex &c){
-        complex ans(0,0);
-        ans.real=real+c.real;
+        complex ans;
+        ans.real=real+c.real;  //within the class the private data memebers of other object of same class is accessible
         ans.img=img+c.img;
         return ans;
     }
@@ -33,9 +38,9 @@ public:
 int main(){
     complex c1(1,2);
     complex c2(1,3);
-    cout<<c1.real<<" i"<<c1.img<<endl;
-    cout<<c2.real<<" i"<<c2.img<<endl;
+    c1.disp();
+    c2.disp();
     complex c3=c2+c1;;
-    cout<<c3.real<<" i"<<c3.img<<endl;
+    c3.disp();
     return 0;
 }
