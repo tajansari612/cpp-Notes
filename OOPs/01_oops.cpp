@@ -30,7 +30,7 @@ using namespace std;
 
 class student{
     public:       //access specifiers(public,private,protected), default is private
-    //data members
+    //data members/properties
     int rollNo;
     string name;
     int age;
@@ -44,7 +44,7 @@ class student{
         this->gender=gender;
     }
 
-    //methods
+    //member functions/methods
     void disp(){
         cout<<"rollNo :"<<this->rollNo<<endl;
         cout<<"name  :"<<this->name<<endl;
