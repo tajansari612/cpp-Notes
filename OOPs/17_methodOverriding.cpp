@@ -40,7 +40,7 @@ class Dog : public Animal{
     
     //method
     //overriden function from base class
-    void speak(){
+    void  speak() override{
         cout<<"Bark!"<<endl;
     }
 
