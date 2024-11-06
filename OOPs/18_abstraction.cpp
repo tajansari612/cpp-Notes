@@ -54,15 +54,19 @@ class square : public shape{
     }
 };
 int main(){
-    shape* s1 = new circle();
-    s1->draw();
-    s1->info();
-
-    circle* c1 = new circle();
+    //Object of shape can not be created as it is a abstract class
+    shape* c1 = new circle();
     c1->draw();
     c1->info();
 
-    delete s1;
+    //without new keyword
+    shape* s1;
+    square sq1;
+    s1 = &sq1;
+    s1->info();
+    s1->draw();
+
     delete c1;
+    delete s1;
     return 0;
 }
