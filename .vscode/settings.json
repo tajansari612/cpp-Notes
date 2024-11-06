@@ -6,6 +6,7 @@
         "*.tcc": "cpp",
         "string": "cpp",
         "memory_resource": "cpp",
-        "scoped_allocator": "cpp"
+        "scoped_allocator": "cpp",
+        "array": "cpp"
     }
 }
